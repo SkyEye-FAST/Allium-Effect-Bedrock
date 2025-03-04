@@ -67,7 +67,7 @@ def create_resource_pack() -> tuple[str, float]:
         textures_path = P / "textures"
         if textures_path.exists():
             for texture in textures_path.rglob("*.*"):
-                z.write(texture, arcname=texture.relative_to(textures_path).as_posix())
+                z.write(texture, arcname=texture.relative_to(P).as_posix())
     shutil.copy2(pack_path, mcpack_path)
     end_time = time.time()
 
